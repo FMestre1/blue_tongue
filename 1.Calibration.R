@@ -2,17 +2,18 @@
 #28/07/2022
 
 getmethodNames()
+installAll()
 
-#6. Build Models
-obsoletus_COMPLEX_sdm <- sdm::sdm(species_occ ~.,data=data_obsoletus_COMPLEX_gbif,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
+#1. Build Models ###############################################################
+obsoletus_COMPLEX_sdm <- sdm::sdm(occurrence ~.,data=data_obsoletus_COMPLEX,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
 #brevitasis_sdm <- sdm::sdm(brevitasis_occ ~.,data=data_brevitasis_gbif,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
 dewulfi_sdm <- sdm::sdm(dewulfi_occ ~.,data=data_dewulfi_gbif,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
-pulicaris_sdm <- sdm::sdm(pulicaris_occ ~.,data=data_pulicaris_gbif,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
+pulicaris_sdm <- sdm::sdm(occurrence ~.,data=data_pulicaris,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
 #obsoletus_sdm <- sdm::sdm(obsoletus_occ ~.,data=data_obsoletus_gbif,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
 #imicola_sdm <- sdm::sdm(imicola_occ ~.,data=data_imicola_gbif,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
-imicola_leta_et_al_sdm <- sdm::sdm(imicola_occ ~.,data=data_imicola_Leta_et_al,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
+imicola_sdm <- sdm::sdm(occurrence ~.,data=data_imicola,methods=c('maxent','cart','rf','fda','glm','gam','mars','svm','brt'),replication='sub',test.percent=30,n=10)
 
-# 7.Model metrics and variable importance
+#2. Model metrics and variable importance ######################################
 #brevitasis
 getModelInfo(obsoletus_COMPLEX_sdm)
 getVarImp(obsoletus_COMPLEX_sdm)
@@ -54,13 +55,12 @@ mean_ev_metrics_pulicaris_sdm <- as.data.frame(round(colMeans(x=ev_metrics_pulic
 #mean_ev_metrics_obsoletus_sdm <- as.data.frame(round(colMeans(x=ev_metrics_obsoletus_sdm),3))
 #
 #imicola
-getModelInfo(imicola_leta_et_al_sdm)
-getVarImp(imicola_leta_et_al_sdm)
-plot(getVarImp(imicola_leta_et_al_sdm),'auc')
-rcurve(imicola_leta_et_al_sdm, id=, mean=TRUE, smooth=TRUE)
-ev_metrics_imicola_sdm <- getEvaluation(imicola_leta_et_al_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
+getModelInfo(imicola_sdm)
+getVarImp(imicola_sdm)
+plot(getVarImp(imicola_sdm),'auc')
+rcurve(imicola_sdm, id=, mean=TRUE, smooth=TRUE)
+ev_metrics_imicola_sdm <- getEvaluation(imicola_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
 mean_ev_metrics_obsoletus_sdm <- as.data.frame(round(colMeans(x=ev_metrics_imicola_sdm),3))
 #
-
-#Save
+#3. Save #######################################################################
 save.image("blue_tongue.RData")
