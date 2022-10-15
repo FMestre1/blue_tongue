@@ -30,11 +30,8 @@ b2004 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2004",
   Keep_Raw = FALSE,
@@ -56,11 +53,8 @@ b2007 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2007",
   Keep_Raw = FALSE,
@@ -82,11 +76,8 @@ b2008 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2008",
   Keep_Raw = FALSE,
@@ -108,11 +99,8 @@ b2009 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2009",
   Keep_Raw = FALSE,
@@ -134,11 +122,8 @@ b2010 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2010",
   Keep_Raw = FALSE,
@@ -160,11 +145,8 @@ b2015 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2015",
   Keep_Raw = FALSE,
@@ -186,11 +168,8 @@ b2016 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2016",
   Keep_Raw = FALSE,
@@ -212,11 +191,8 @@ b2021 <- BioClim(
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-<<<<<<< HEAD
   Dir = "D:\\Dados climáticos\\eras2",
-=======
   Dir = "bioclimaticas",
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
   verbose = TRUE,
   FileName = "2021",
   Keep_Raw = FALSE,
@@ -261,7 +237,6 @@ b2021_2 <- mask(b2021, portugal_shapefile)
 
 ################################################################################
 
-<<<<<<< HEAD
 tmin_2004 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2004.nc")
 tmin_2007 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2007.nc")
 tmin_2008 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2008.nc")
@@ -280,7 +255,7 @@ tmin_2015_2 <- mask(tmin_2015, portugal_shapefile)
 tmin_2016_2 <- mask(tmin_2016, portugal_shapefile)
 tmin_2021_2 <- mask(tmin_2021, portugal_shapefile)
 
-=======
+
 ################################################################################
 
 #06-09-2022
@@ -304,7 +279,6 @@ tmin_2015_2 <- mask(tmin_2015, portugal_shapefile)
 tmin_2016_2 <- mask(tmin_2016, portugal_shapefile)
 tmin_2021_2 <- mask(tmin_2021, portugal_shapefile)
 
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0
 tmax_2004 <- stack("terraclimate\\tmax\\TerraClimate_tmax_2004.nc")
 tmax_2007 <- stack("terraclimate\\tmax\\TerraClimate_tmax_2007.nc")
 tmax_2008 <- stack("terraclimate\\tmax\\TerraClimate_tmax_2008.nc")
@@ -511,9 +485,6 @@ raster::writeRaster(biovars_2021$bio16, filename = "2021\\bio16.tif")
 raster::writeRaster(biovars_2021$bio17, filename = "2021\\bio17.tif")
 raster::writeRaster(biovars_2021$bio18, filename = "2021\\bio18.tif")
 raster::writeRaster(biovars_2021$bio19, filename = "2021\\bio19.tif")
-<<<<<<< HEAD
-=======
-
 
 #Now in the cluster ############################################################
 bio1_2004 <- raster::raster("terraclimate\\2004\\bio1.tif")
@@ -752,4 +723,3 @@ bio_2021 <- crop(bio_2021, portugal_shapefile)
 rm(bio1_2021, bio2_2021, bio3_2021, bio4_2021, bio5_2021, bio6_2021, bio7_2021, 
    bio8_2021, bio9_2021, bio10_2021, bio11_2021, bio12_2021, bio13_2021, bio14_2021, 
    bio15_2021, bio16_2021, bio17_2021, bio18_2021, bio19_2021)
->>>>>>> 7652e88bc385c8d80f65177fe79364d3e02975a0

@@ -70,16 +70,8 @@ plot(world)
 plot(wind_corridor, add=TRUE)
 
 
-
-#library(openair)
-#from: https://sgichuki.github.io/Atmo/
-#test3 <- data.frame(as.vector(test1), as.vector(test2))
-#names(test3) <- c("dir", "speed")
-#head(test3)
-#windRose(mydata, ws = "speed", wd = "dir")
-
+#Monthly direction
 dir_vectors_for_polygon <- list()
-
 for(i in 1:nlayers(m100_v_comp)){
 wdir1 <- windDir(m100_u_comp[[i]], m100_v_comp[[i]])
 dir1 <- raster::extract(wdir1, wind_corridor)
@@ -87,19 +79,65 @@ dir_vectors_for_polygon[i] <- dir1
 message(paste0("Concluded ", i))
 }
 
-
+MEAN_MONTLY_WIND_DIRECTION <- data.frame(lapply(dir_vectors_for_polygon, mean))
 
 years <- c("2004", "2007", "2008", "2009", "2010", "2015", "2016", "2017")
 months1 <- c("jan","feb", "mar","apr","may","jun","jul","aug","sep","oct","nov","dec")
 
 year_month <- paste0(rep(years,each=12), "_", rep(months1, 8))
-#names(dir_vectors_for_polygon) <- year_month
+names(dir_vectors_for_polygon) <- year_month
+
+mydates <- as.Date(blue_tongue@data$Data.confi)
+
+months_outbreaks <- format(mydates,"%m")
+years_outbreaks <- format(mydates,"%Y")
+outbreaks_month_year <- paste0(months_outbreaks, "_", years_outbreaks)
+number_outbreaks_month <- data.frame(table(outbreaks_month_year))
 
 
+years2 <- c("2004", "2007", "2008", "2009", "2010", "2015", "2016", "2021")
+months2 <- c("01","02", "03","04","05","06","07","08","09","10","11","12")
+
+all_year_month_outbreaks <- paste0(rep(months2, 8), "_", rep(years2,each=12))
+all_year_month_outbreaks <- data.frame(all_year_month_outbreaks)
+#
+all_year_month_outbreaks <- merge(all_year_month_outbreaks, 
+                                  y=number_outbreaks_month, 
+                                  by.x = "all_year_month_outbreaks", 
+                                  by.y = "outbreaks_month_year", 
+                                  all =TRUE,
+                                  sort = TRUE)
+
+names(all_year_month_outbreaks) <- c("month","nr_outbreaks")
+
+all_year_month_outbreaks_2 <- data.frame(rep(months2,each=8), rep(years2,12), all_year_month_outbreaks)
+
+names(all_year_month_outbreaks_2) <- c("month", "year", "month_year", "nr_outbreaks")
+
+all_year_month_outbreaks_2$month <- as.numeric(all_year_month_outbreaks_2$month)
+all_year_month_outbreaks_2$year <- as.numeric(all_year_month_outbreaks_2$year)
+
+head(all_year_month_outbreaks_2)
+str(all_year_month_outbreaks_2)
+
+all_year_month_outbreaks_3 <- all_year_month_outbreaks_2[
+  with(all_year_month_outbreaks_2, order(year, month)),
+]
+
+all_year_month_outbreaks_3[is.na(all_year_month_outbreaks_3)] <- 0
 
 
+all_year_month_outbreaks_4 <- data.frame(all_year_month_outbreaks_3, names(MEAN_MONTLY_WIND_DIRECTION), t(MEAN_MONTLY_WIND_DIRECTION))
+
+View(all_year_month_outbreaks_4)
+
+names(all_year_month_outbreaks_4)[5:6] <- c("months_wind_direction", "wind_direction")
+
+head(all_year_month_outbreaks_4)
 
 
-
-
+#Circular-linear regrassion
+#load package
+library(Directional)
+circlin.cor(theta=all_year_month_outbreaks_4$wind_direction, x=all_year_month_outbreaks_4$nr_outbreaks, rads = TRUE)
 
