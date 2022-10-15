@@ -140,4 +140,6 @@ head(all_year_month_outbreaks_4)
 #load package
 library(Directional)
 circlin.cor(theta=all_year_month_outbreaks_4$wind_direction, x=all_year_month_outbreaks_4$nr_outbreaks, rads = TRUE)
-
+#
+library(circular)
+lm.circular(y=all_year_month_outbreaks_4$wind_direction, x=all_year_month_outbreaks_4$nr_outbreaks, init=c(5,1), type='c-l', verbose=TRUE)
