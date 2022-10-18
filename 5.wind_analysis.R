@@ -81,7 +81,7 @@ message(paste0("Concluded ", i))
 
 MEAN_MONTLY_WIND_DIRECTION <- data.frame(lapply(dir_vectors_for_polygon, mean))
 
-years <- c("2004", "2007", "2008", "2009", "2010", "2015", "2016", "2017")
+years <- c("2004", "2007", "2008", "2009", "2010", "2015", "2016", "2021")
 months1 <- c("jan","feb", "mar","apr","may","jun","jul","aug","sep","oct","nov","dec")
 
 year_month <- paste0(rep(years,each=12), "_", rep(months1, 8))
@@ -93,7 +93,6 @@ months_outbreaks <- format(mydates,"%m")
 years_outbreaks <- format(mydates,"%Y")
 outbreaks_month_year <- paste0(months_outbreaks, "_", years_outbreaks)
 number_outbreaks_month <- data.frame(table(outbreaks_month_year))
-
 
 years2 <- c("2004", "2007", "2008", "2009", "2010", "2015", "2016", "2021")
 months2 <- c("01","02", "03","04","05","06","07","08","09","10","11","12")
@@ -126,20 +125,24 @@ all_year_month_outbreaks_3 <- all_year_month_outbreaks_2[
 
 all_year_month_outbreaks_3[is.na(all_year_month_outbreaks_3)] <- 0
 
-
 all_year_month_outbreaks_4 <- data.frame(all_year_month_outbreaks_3, names(MEAN_MONTLY_WIND_DIRECTION), t(MEAN_MONTLY_WIND_DIRECTION))
 
-View(all_year_month_outbreaks_4)
-
 names(all_year_month_outbreaks_4)[5:6] <- c("months_wind_direction", "wind_direction")
-
+View(all_year_month_outbreaks_4)
 head(all_year_month_outbreaks_4)
 
+#Create data frame with the wind direction of previous month
+all_year_month_outbreaks_5_previous_month <- data.frame(all_year_month_outbreaks_4[-1, 1:4], all_year_month_outbreaks_4[-96,5:6])
+View(all_year_month_outbreaks_5_previous_month)
 
 #Circular-linear regrassion
 #load package
 library(Directional)
+#Same month: outbreaks-wind direction
 circlin.cor(theta=all_year_month_outbreaks_4$wind_direction, x=all_year_month_outbreaks_4$nr_outbreaks, rads = TRUE)
+#Previous month: outbreaks-wind direction
+circlin.cor(theta=all_year_month_outbreaks_5_previous_month$wind_direction, x=all_year_month_outbreaks_5_previous_month$nr_outbreaks, rads = TRUE)
+
 #
 library(circular)
 lm.circular(y=all_year_month_outbreaks_4$wind_direction, x=all_year_month_outbreaks_4$nr_outbreaks, init=c(5,1), type='c-l', verbose=TRUE)
