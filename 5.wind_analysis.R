@@ -38,28 +38,30 @@ windDir <-function(u,v){
   (270-atan2(u,v)*180/pi)%%360 
 }
 
+#wind_direction = atan2(V, U) * 180 / pi
+
 #Speed
 windSpd <-function(u,v){
   sqrt(u^2+v^2)
 }
 
-test1 <- windDir(m100_u_comp[[1]], m100_v_comp[[1]])
+#test1 <- windDir(m100_u_comp[[1]], m100_v_comp[[1]])
 plot(test1)
-test2 <- windSpd(m100_u_comp[[1]], m100_v_comp[[1]])
+#test2 <- windSpd(m100_u_comp[[1]], m100_v_comp[[1]])
 plot(test2)
 
 #Create corridor polygon
-crds <- cbind(x=c(-11, -13, 0, -5), y=c(38, 28, 28, 38))
-Pl <- Polygon(crds)
-Pls <- Polygons(list(Pl), ID=1)
-SPls <- SpatialPolygons(list(Pls))
+#crds <- cbind(x=c(-11, -13, 0, -5), y=c(38, 28, 28, 38))
+#Pl <- Polygon(crds)
+#Pls <- Polygons(list(Pl), ID=1)
+#SPls <- SpatialPolygons(list(Pls))
 
 #Ploting
 world <- raster::shapefile("C:/Users/FMest/Documents/0. Artigos/Lingua_azul/world-administrative-boundaries/world-administrative-boundaries.shp")
 #
-plot(world)
-plot(SPls, add=TRUE)
-plot(study_site_alentejo)
+#plot(world)
+#plot(SPls, add=TRUE)
+#plot(study_site_alentejo, add=TRUE)
 #Save as shapefile
 raster::shapefile(SPls, "wind_corridor.shp")
 #Load the one edited in QGIS
@@ -68,7 +70,6 @@ crs(wind_corridor) <- crs(world)
 #plot
 plot(world)
 plot(wind_corridor, add=TRUE)
-
 
 #Monthly direction
 dir_vectors_for_polygon <- list()
@@ -139,9 +140,41 @@ View(all_year_month_outbreaks_5_previous_month)
 #load package
 library(Directional)
 #Same month: outbreaks-wind direction
-circlin.cor(theta=all_year_month_outbreaks_4$wind_direction, x=all_year_month_outbreaks_4$nr_outbreaks, rads = TRUE)
+circlin.cor(theta=all_year_month_outbreaks_4$wind_direction, x=all_year_month_outbreaks_4$nr_outbreaks, rads = FALSE)
 #Previous month: outbreaks-wind direction
-circlin.cor(theta=all_year_month_outbreaks_5_previous_month$wind_direction, x=all_year_month_outbreaks_5_previous_month$nr_outbreaks, rads = TRUE)
+circlin.cor(theta=all_year_month_outbreaks_5_previous_month$wind_direction, x=all_year_month_outbreaks_5_previous_month$nr_outbreaks, rads = FALSE)
 #Using only the months from September to October
 all_year_month_outbreaks_5_previous_month_aug_oct <- all_year_month_outbreaks_5_previous_month[all_year_month_outbreaks_5_previous_month$month == c(8:10),]
-circlin.cor(theta=all_year_month_outbreaks_5_previous_month_aug_oct$wind_direction, x=all_year_month_outbreaks_5_previous_month_aug_oct$nr_outbreaks, rads = TRUE)
+circlin.cor(theta=all_year_month_outbreaks_5_previous_month_aug_oct$wind_direction, x=all_year_month_outbreaks_5_previous_month_aug_oct$nr_outbreaks, rads = FALSE)
+
+
+
+#New plots
+View(all_year_month_outbreaks_4)
+View(all_year_month_outbreaks_5_previous_month)
+View(all_year_month_outbreaks_5_previous_month_aug_oct)
+#
+plot(all_year_month_outbreaks_4$wind_direction, all_year_month_outbreaks_4$nr_outbreaks)
+plot(all_year_month_outbreaks_5_previous_month$wind_direction, all_year_month_outbreaks_5_previous_month$nr_outbreaks)
+plot(all_year_month_outbreaks_5_previous_month_aug_oct$wind_direction, all_year_month_outbreaks_5_previous_month_aug_oct$nr_outbreaks)#
+
+ggplot(all_year_month_outbreaks_4, aes(x=wind_direction, y=nr_outbreaks)) +
+  geom_point(size=4, shape=19) +
+  xlab("Wind direction (degrees)") +
+  ylab("Number of bluetongue outbreaks (all the year)")
+#
+ggplot(all_year_month_outbreaks_5_previous_month, aes(x=wind_direction, y=nr_outbreaks)) +
+  geom_point(size=4, shape=19) +
+  xlab("Wind direction in the previous month (degrees)") +
+  ylab("Number of bluetongue outbreaks (all the year)")
+#
+ggplot(all_year_month_outbreaks_5_previous_month_aug_oct, aes(x=wind_direction, y=nr_outbreaks)) +
+  geom_point(size=4, shape=19) +
+  xlab("Wind direction in the previous month (degrees)") +
+  ylab("Number of bluetongue outbreaks (August to October)")
+
+
+
+
+
+
