@@ -158,6 +158,8 @@ plot(all_year_month_outbreaks_4$wind_direction, all_year_month_outbreaks_4$nr_ou
 plot(all_year_month_outbreaks_5_previous_month$wind_direction, all_year_month_outbreaks_5_previous_month$nr_outbreaks)
 plot(all_year_month_outbreaks_5_previous_month_aug_oct$wind_direction, all_year_month_outbreaks_5_previous_month_aug_oct$nr_outbreaks)#
 
+library(ggplot2)
+
 ggplot(all_year_month_outbreaks_4, aes(x=wind_direction, y=nr_outbreaks)) +
   geom_point(size=4, shape=19) +
   xlab("Wind direction (degrees)") +
@@ -174,7 +176,59 @@ ggplot(all_year_month_outbreaks_5_previous_month_aug_oct, aes(x=wind_direction, 
   ylab("Number of bluetongue outbreaks (August to October)")
 
 
+### Create the circular barplot ###
+
+library(tidyverse)
+
+##Number of bluetongue outbreaks (all the year)
+
+all_year_month_outbreaks_4_binned <- all_year_month_outbreaks_4 %>%
+  dplyr::mutate(
+    wind_direction_binned = cut(wind_direction, breaks = seq(0,360,10))
+    #y_binned = cut(y, breaks = seq(0,100,10))
+  )
+
+all_year_month_outbreaks_4_binned <- as.data.frame(summarise(group_by(all_year_month_outbreaks_4_binned, 
+                                    wind_direction_binned, .drop = FALSE), sum.outbreaks = sum(nr_outbreaks)))
 
 
+ggplot(all_year_month_outbreaks_4_binned, aes(x = wind_direction_binned, y = sum.outbreaks)) +
+  geom_bar(width = 0.7, stat = "identity", fill=alpha("darkblue")) +
+  coord_polar(theta = "x") +
+  theme_minimal()
 
 
+##
+
+#Wind direction in the previous month (degrees) vs Number of bluetongue outbreaks (all the year)
+
+all_year_month_outbreaks_5_previous_month_binned <- all_year_month_outbreaks_5_previous_month %>%
+  dplyr::mutate(
+    wind_direction_binned = cut(wind_direction, breaks = seq(0,360,10))
+    #y_binned = cut(y, breaks = seq(0,100,10))
+  )
+
+all_year_month_outbreaks_5_previous_month_binned <- as.data.frame(summarise(group_by(all_year_month_outbreaks_5_previous_month_binned, 
+                                                                      wind_direction_binned, .drop = FALSE), sum.outbreaks = sum(nr_outbreaks)))
+
+ggplot(all_year_month_outbreaks_5_previous_month_binned, aes(x = wind_direction_binned, y = sum.outbreaks)) +
+  geom_bar(width = 0.7, stat = "identity", fill=alpha("darkblue")) +
+  coord_polar(theta = "x") +
+  theme_minimal()
+
+
+#Wind direction in the previous month (degrees) vs Number of bluetongue outbreaks (August to October)
+
+all_year_month_outbreaks_5_previous_month_aug_oct_binned <- all_year_month_outbreaks_5_previous_month_aug_oct %>%
+  dplyr::mutate(
+    wind_direction_binned = cut(wind_direction, breaks = seq(0,360,10))
+    #y_binned = cut(y, breaks = seq(0,100,10))
+  )
+
+all_year_month_outbreaks_5_previous_month_aug_oct_binned <- as.data.frame(summarise(group_by(all_year_month_outbreaks_5_previous_month_aug_oct_binned, 
+                                                                                     wind_direction_binned, .drop = FALSE), sum.outbreaks = sum(nr_outbreaks)))
+
+ggplot(all_year_month_outbreaks_5_previous_month_aug_oct_binned, aes(x = wind_direction_binned, y = sum.outbreaks)) +
+  geom_bar(width = 0.7, stat = "identity", fill=alpha("darkblue")) +
+  coord_polar(theta = "x") +
+  theme_minimal()
