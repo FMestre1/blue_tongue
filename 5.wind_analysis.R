@@ -179,6 +179,7 @@ ggplot(all_year_month_outbreaks_5_previous_month_aug_oct, aes(x=wind_direction, 
 ### Create the circular barplot ###
 
 library(tidyverse)
+library(ggplot2)
 
 ##Number of bluetongue outbreaks (all the year)
 
