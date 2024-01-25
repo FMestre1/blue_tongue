@@ -1,2 +1,1 @@
-# blue_tongue
-Modelling blue tongue disease outbreaks in Portugal
+## Code for the paper "Climate Correlates of Bluetongue Incidence in Southern Portugal" ##
