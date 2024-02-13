@@ -1,3 +1,6 @@
+################################################################################
+# MODEL PROJECTION
+################################################################################
 #FMestre
 #01-08-2022
 
@@ -111,8 +114,6 @@ plot(pulicaris_2021)
 plot(obsoletus_2021)
 plot(imicola_2021)
 
-#AQUI
-
 #Plot imicola
 #lbreaks <- seq(0, 0.310, 0.01)
 
@@ -179,4 +180,3 @@ map_obsoletus_2021 <- levelplot(obsoletus_2021, par.settings=RdBuTheme, margin=F
 grid.arrange(map_obsoletus_2004, map_obsoletus_2007, map_obsoletus_2008, map_obsoletus_2009, 
              map_obsoletus_2010, map_obsoletus_2015, map_obsoletus_2016, map_obsoletus_2021,
              nrow=2,ncol=4)
-

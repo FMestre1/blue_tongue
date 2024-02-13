@@ -1,6 +1,7 @@
-#####################################################################
-######################## HIGH RESOLUTION PT ######################### 
-#####################################################################
+################################################################################
+# LOAD PROJECTION VARIABLES
+################################################################################
+
 # 8. Load the variables with higher resolution to project the model
 
 #### Bioclimatic variables to project the model to (many not required, not in the model)
@@ -227,11 +228,10 @@ b2016_2 <- mask(b2016, portugal_shapefile)
 b2021_2 <- mask(b2021, portugal_shapefile)
 
 
-
 ################################################################################
 
 #06-09-2022
-#This co de was run in my own computer (the package KrigR is not installed here)
+#This code was run in my own computer (the package KrigR is not installed here)
 
 tmin_2004 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2004.nc")
 tmin_2007 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2007.nc")
@@ -486,8 +486,8 @@ bio_2004 <- stack(bio1_2004, bio2_2004, bio3_2004, bio4_2004, bio5_2004, bio6_20
 bio_2004 <- mask(bio_2004, portugal_shapefile)
 bio_2004 <- crop(bio_2004, portugal_shapefile)
 rm(bio1_2004, bio2_2004, bio3_2004, bio4_2004, bio5_2004, bio6_2004, bio7_2004, 
-                  bio8_2004, bio9_2004, bio10_2004, bio11_2004, bio12_2004, bio13_2004, bio14_2004, 
-                  bio15_2004, bio16_2004, bio17_2004, bio18_2004, bio19_2004)
+   bio8_2004, bio9_2004, bio10_2004, bio11_2004, bio12_2004, bio13_2004, bio14_2004, 
+   bio15_2004, bio16_2004, bio17_2004, bio18_2004, bio19_2004)
 #
 bio1_2007 <- raster::raster("terraclimate\\2007\\bio1.tif")
 bio2_2007 <- raster::raster("terraclimate\\2007\\bio2.tif")
@@ -515,8 +515,8 @@ bio_2007 <- stack(bio1_2007, bio2_2007, bio3_2007, bio4_2007, bio5_2007, bio6_20
 bio_2007 <- mask(bio_2007, portugal_shapefile)
 bio_2007 <- crop(bio_2007, portugal_shapefile)
 rm(bio1_2007, bio2_2007, bio3_2007, bio4_2007, bio5_2007, bio6_2007, bio7_2007, 
-                  bio8_2007, bio9_2007, bio10_2007, bio11_2007, bio12_2007, bio13_2007, bio14_2007, 
-                  bio15_2007, bio16_2007, bio17_2007, bio18_2007, bio19_2007)
+   bio8_2007, bio9_2007, bio10_2007, bio11_2007, bio12_2007, bio13_2007, bio14_2007, 
+   bio15_2007, bio16_2007, bio17_2007, bio18_2007, bio19_2007)
 #
 bio1_2008 <- raster::raster("terraclimate\\2008\\bio1.tif")
 bio2_2008 <- raster::raster("terraclimate\\2008\\bio2.tif")

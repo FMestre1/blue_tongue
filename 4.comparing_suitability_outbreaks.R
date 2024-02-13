@@ -1,3 +1,6 @@
+################################################################################
+# COMPARING SUITABILITY WITH OUTBREAKS
+################################################################################
 #FMestre
 #07-09-2022
 
@@ -398,77 +401,77 @@ for(i in 1:1000){
 ################################################################################ imicola
 
 #imicola 2004
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2004
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2004)
 #imicola 2007
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2007
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2007)
 #imicola 2008
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2008
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2008)
 #imicola 2009
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2009
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2009)
 #imicola 2010
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2010
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2010)
 #imicola 2015
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2015
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2015)
 #imicola 2016
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2016
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2016)
 #imicola 2021
-VECTOR_TEST_blue_tongue_outbreaks_imicola_2021
+mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2021)
 
 ################################################################################ dewulfi
 
 #dewulfi 2004
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2004
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2004)
 #dewulfi 2007
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2007
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2007)
 #dewulfi 2008
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2008
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2008)
 #dewulfi 2009
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2009
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2009)
 #dewulfi 2010
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2010
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2010)
 #dewulfi 2015
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2015
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2015)
 #dewulfi 2016
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2016
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2016)
 #dewulfi 2021
-VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2021
+mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2021)
 
 ################################################################################ pulicaris
 
 #pulicaris 2004
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2004
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2004)
 #pulicaris 2007
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2007
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2007)
 #pulicaris 2008
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2008
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2008)
 #pulicaris 2009
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2009
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2009)
 #pulicaris 2010
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2010
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2010)
 #pulicaris 2015
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2015
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2015)
 #pulicaris 2016
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2016
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2016)
 #pulicaris 2021
-VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2021
+mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2021)
 
 ################################################################################ obsoletus
 
 #obsoletus 2004
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2004
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2004)
 #obsoletus 2007
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2007
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2007)
 #obsoletus 2008
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2008
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2008)
 #obsoletus 2009
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2009
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2009)
 #obsoletus 2010
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2010
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2010)
 #obsoletus 2015
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2015
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2015)
 #obsoletus 2016
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2016
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2016)
 #obsoletus 2021
-VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2021
+mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2021)
 
 ################################################################################
