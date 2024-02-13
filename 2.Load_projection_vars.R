@@ -25,13 +25,12 @@ b2021 <- stack("bioclimaticas\\2021.nc")
 
 #2004
 b2004 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2004,
   Y_end = 2004,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2004",
@@ -48,13 +47,12 @@ b2004 <- BioClim(
 
 #2007
 b2007 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2007,
   Y_end = 2007,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2007",
@@ -71,13 +69,12 @@ b2007 <- BioClim(
 
 #2008
 b2008 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2008,
   Y_end = 2008,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2008",
@@ -94,13 +91,12 @@ b2008 <- BioClim(
 
 #2009
 b2009 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2009,
   Y_end = 2009,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2009",
@@ -117,13 +113,12 @@ b2009 <- BioClim(
 
 #2010 #REPETIR
 b2010 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2010,
   Y_end = 2010,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2010",
@@ -140,13 +135,12 @@ b2010 <- BioClim(
 
 #2015
 b2015 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2015,
   Y_end = 2015,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2015",
@@ -163,13 +157,12 @@ b2015 <- BioClim(
 
 #2016
 b2016 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2016,
   Y_end = 2016,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2016",
@@ -186,13 +179,12 @@ b2016 <- BioClim(
 
 #2021
 b2021 <- BioClim(
-  Water_Var = "total_precipitation",
+  Water_Var = "volumetric_soil_water_layer_1",
   Y_start = 2021,
   Y_end = 2021,
   T_res = "day",
   Extent = extent(-9.6, -6.3, 36.7, 42.40),
   DataSet = "era5-land",
-  Dir = "D:\\Dados climáticos\\eras2",
   Dir = "bioclimaticas",
   verbose = TRUE,
   FileName = "2021",
@@ -236,30 +228,6 @@ b2016_2 <- mask(b2016, portugal_shapefile)
 b2021_2 <- mask(b2021, portugal_shapefile)
 
 
-<<<<<<< HEAD
-=======
-################################################################################
-
-tmin_2004 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2004.nc")
-tmin_2007 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2007.nc")
-tmin_2008 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2008.nc")
-tmin_2009 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2009.nc")
-tmin_2010 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2010.nc")
-tmin_2015 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2015.nc")
-tmin_2016 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2016.nc")
-tmin_2021 <- stack("terraclimate\\tmin\\TerraClimate_tmin_2021.nc")
-#
-tmin_2004_2 <- mask(tmin_2004, portugal_shapefile)
-tmin_2007_2 <- mask(tmin_2007, portugal_shapefile)
-tmin_2008_2 <- mask(tmin_2008, portugal_shapefile)
-tmin_2009_2 <- mask(tmin_2009, portugal_shapefile)
-tmin_2010_2 <- mask(tmin_2010, portugal_shapefile)
-tmin_2015_2 <- mask(tmin_2015, portugal_shapefile)
-tmin_2016_2 <- mask(tmin_2016, portugal_shapefile)
-tmin_2021_2 <- mask(tmin_2021, portugal_shapefile)
-
-
->>>>>>> ed26bdf49ffce6d4d7d4f572ca73d1361c2fa205
 ################################################################################
 
 #06-09-2022
@@ -489,6 +457,7 @@ raster::writeRaster(biovars_2021$bio16, filename = "2021\\bio16.tif")
 raster::writeRaster(biovars_2021$bio17, filename = "2021\\bio17.tif")
 raster::writeRaster(biovars_2021$bio18, filename = "2021\\bio18.tif")
 raster::writeRaster(biovars_2021$bio19, filename = "2021\\bio19.tif")
+
 
 #Now in the cluster ############################################################
 bio1_2004 <- raster::raster("terraclimate\\2004\\bio1.tif")
