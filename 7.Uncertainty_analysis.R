@@ -13,6 +13,17 @@
 # 4. confidence interval length (upper limit - lower limit)
 
 #####################
+# But first convert the 'sdmModels' class object to the current version of the package
+#####################
+
+#Replace here...
+
+#dewulfi_sdm_new_version <- dewulfi_sdm
+#pulicaris_sdm_new_version <- pulicaris_sdm
+#obsoletus_COMPLEX_sdm_new_version <- obsoletus_COMPLEX_sdm
+#imicola_sdm_new_version <- imicola_sdm
+
+#####################
 #2004
 #####################
 
