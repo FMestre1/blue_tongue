@@ -422,14 +422,9 @@ writeOGR(obj=COMBINED_imicola_thin, dsn="tempdir", layer="COMBINED_imicola_thin"
 
 # 14.Format data for sdm ########################################################
 data_obsoletus_COMPLEX <- sdmData(train=COMBINED_obsoletus_thin[,3], predictors = preds2, bg=list(n=10*nrow(COMBINED_obsoletus_thin), method='gRandom',remove=TRUE))
-#data_scoticus_gbif <- sdmData(train=scoticus_gbif_2_cl_cl_df[,6], predictors = preds2, bg=list(n=10*nrow(scoticus_gbif_2_cl_cl_df), method='gRandom',remove=TRUE))
-#data_chiopterus_gbif <- sdmData(train=chiopterus_gbif_2_cl_cl_df[,6], predictors = preds2, bg=list(n=10*nrow(chiopterus_gbif_2_cl_cl_df), method='gRandom',remove=TRUE))
-#data_brevitasis_gbif <- sdmData(train=brevitasis_gbif_2_cl_cl_df_spdf[,6], predictors = preds2, bg=list(n=10*nrow(brevitasis_gbif_2_cl_cl_df_spdf), method='gRandom',remove=TRUE))
 data_dewulfi_gbif <- sdmData(train=dewulfi_gbif_2_cl_df_spdf_thin[,6], predictors = preds2, bg=list(n=10*nrow(dewulfi_gbif_2_cl_df_spdf_thin), method='gRandom',remove=TRUE))
 data_pulicaris <- sdmData(train=COMBINED_pulicaris_thin[,3], predictors = preds2, bg=list(n=10*nrow(COMBINED_pulicaris_thin), method='gRandom',remove=TRUE))
-#data_obsoletus_gbif <- sdmData(train=obsoletus_gbif_2_cl_df_spdf[,6], predictors = preds2, bg=list(n=10*nrow(obsoletus_gbif_2_cl_df_spdf), method='gRandom',remove=TRUE))
-#data_imicola_gbif <- sdmData(train=imicola_gbif_2_cl_df_spdf[,6], predictors = preds2, bg=list(n=10*nrow(imicola_gbif_2_cl_df_spdf), method='gRandom',remove=TRUE))
 data_imicola <- sdmData(train=COMBINED_imicola_thin[,3], predictors = preds2, bg=list(n=10*nrow(COMBINED_imicola_thin@data), method='gRandom',remove=TRUE))
 
 # 15.Save ######################################################################
-save.image()
+save.image("blue_tongue.RData")

@@ -8,9 +8,9 @@ library(sdm)
 library(grDevices)
 library(rasterVis)
 library(gridExtra)
+library(lattice)
 
 #2004
-#brevitasis_2004 <- sdm::ensemble(brevitasis_sdm,newdata=bio_2004,filename='brevitasis_2004.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2004 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2004,filename='output_06_09_2022\\dewulfi_2004_v2.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2004 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2004,filename='output_06_09_2022\\pulicaris_2004_v2.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2004 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2004,filename='output_06_09_2022\\obsoletus_2004_v2.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -23,7 +23,6 @@ plot(obsoletus_2004)
 plot(imicola_2004)
 
 #2007
-#brevitasis_2007 <- sdm::ensemble(brevitasis_sdm,newdata=bio_2007,filename='output_12_08_2022\\brevitasis_2007.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2007 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2007,filename='output_06_09_2022\\dewulfi_2007.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2007 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2007,filename='output_06_09_2022\\pulicaris_2007.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2007 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2007,filename='output_06_09_2022\\obsoletus_2007.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -36,7 +35,6 @@ plot(obsoletus_2007)
 plot(imicola_2007)
 
 #2008
-#brevitasis_2008 <- sdm::ensemble(brevitasis_sdm,newdata=b2008_2,filename='brevitasis_2008.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2008 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2008,filename='output_06_09_2022\\dewulfi_2008.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2008 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2008,filename='output_06_09_2022\\pulicaris_2008.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2008 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2008,filename='output_06_09_2022\\obsoletus_2008.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -49,7 +47,6 @@ plot(obsoletus_2008)
 plot(imicola_2008)
 
 #2009
-#brevitasis_2009 <- sdm::ensemble(brevitasis_sdm,newdata=b2009_2,filename='output_12_08_2022\\brevitasis_2009.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2009 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2009,filename='output_06_09_2022\\dewulfi_2009.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2009 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2009,filename='output_06_09_2022\\pulicaris_2009.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2009 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2009,filename='output_06_09_2022\\obsoletus_2009.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -62,7 +59,6 @@ plot(obsoletus_2009)
 plot(imicola_2009)
 
 #2010
-#brevitasis_2010 <- sdm::ensemble(brevitasis_sdm,newdata=b2010_2,filename='output_12_08_2022\\brevitasis_2010.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2010 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2010,filename='output_06_09_2022\\dewulfi_2010.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2010 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2010,filename='output_06_09_2022\\pulicaris_2010.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2010 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2010,filename='output_06_09_2022\\obsoletus_2010.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -75,7 +71,6 @@ plot(obsoletus_2010)
 plot(imicola_2010)
 
 #2015
-#brevitasis_2015 <- sdm::ensemble(brevitasis_sdm,newdata=b2015_2,filename='output_12_08_2022\\brevitasis_2015.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2015 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2015,filename='output_06_09_2022\\dewulfi_2015.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2015 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2015,filename='output_06_09_2022\\pulicaris_2015.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2015 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2015,filename='output_06_09_2022\\obsoletus_2015.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -88,7 +83,6 @@ plot(obsoletus_2015)
 plot(imicola_2015)
 
 #2016
-#brevitasis_2016 <- sdm::ensemble(brevitasis_sdm,newdata=b2016_2,filename='output_12_08_2022\\brevitasis_2016.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2016 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2016,filename='output_06_09_2022\\dewulfi_2016.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2016 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2016,filename='output_06_09_2022\\pulicaris_2016.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2016 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2016,filename='output_06_09_2022\\obsoletus_2016.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -101,7 +95,6 @@ plot(obsoletus_2016)
 plot(imicola_2016)
 
 #2021
-#brevitasis_2021 <- sdm::ensemble(brevitasis_sdm,newdata=b2021_2,filename='output_12_08_2022\\brevitasis_2021.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 dewulfi_2021 <- sdm::ensemble(dewulfi_sdm,newdata=bio_2021,filename='output_06_09_2022\\dewulfi_2021.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 pulicaris_2021 <- sdm::ensemble(pulicaris_sdm,newdata=bio_2021,filename='output_06_09_2022\\pulicaris_2021.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
 obsoletus_2021 <- sdm::ensemble(obsoletus_COMPLEX_sdm,newdata=bio_2021,filename='output_06_09_2022\\obsoletus_2021.img',setting=list(method='weighted',stat='TSS'),overwrite=TRUE) 
@@ -116,8 +109,6 @@ plot(imicola_2021)
 
 #Plot imicola
 #lbreaks <- seq(0, 0.310, 0.01)
-
-require(lattice)
 
 #
 map_imicola_2004 <- levelplot(imicola_2004, par.settings=RdBuTheme, margin=FALSE, main = "C. imicola 2004", col.regions = terrain.colors(100, rev=T))
