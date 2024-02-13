@@ -96,3 +96,4 @@ terra::plot(raster_stack_vers2[[25:32]],
             axes = FALSE,
             nr = 2
 )
+
