@@ -427,4 +427,4 @@ data_pulicaris <- sdmData(train=COMBINED_pulicaris_thin[,3], predictors = preds2
 data_imicola <- sdmData(train=COMBINED_imicola_thin[,3], predictors = preds2, bg=list(n=10*nrow(COMBINED_imicola_thin@data), method='gRandom',remove=TRUE))
 
 # 15.Save ######################################################################
-save.image("blue_tongue.RData")
+#save.image("blue_tongue.RData")

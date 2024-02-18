@@ -16,36 +16,34 @@
 # But first convert the 'sdmModels' class object to the current version of the package
 #####################
 
-#Replace here...
-
-#dewulfi_sdm_new_version <- dewulfi_sdm
-#pulicaris_sdm_new_version <- pulicaris_sdm
-#obsoletus_COMPLEX_sdm_new_version <- obsoletus_COMPLEX_sdm
-#imicola_sdm_new_version <- imicola_sdm
+obsoletus_COMPLEX_sdm_NEW_VERSION <- sdmAdapt(obsoletus_COMPLEX_sdm)
+dewulfi_sdm_NEW_VERSION <- sdmAdapt(dewulfi_sdm)
+pulicaris_sdm_NEW_VERSION <- sdmAdapt(pulicaris_sdm)
+imicola_sdm_NEW_VERSION <- sdmAdapt(imicola_sdm)
 
 #####################
 #2004
 #####################
 
-dewulfi_2004_13fev <- sdm::ensemble(dewulfi_sdm, 
+dewulfi_2004_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION, 
                                     newdata=biovars_2004,
                                     filename='output_FEV_2024\\dewulfi_2004_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                     overwrite=TRUE) 
 
-pulicaris_2004_13fev <- sdm::ensemble(pulicaris_sdm, 
+pulicaris_2004_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION, 
                                       newdata=biovars_2004,
                                       filename='output_FEV_2024\\pulicaris_2004_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'), 
                                       overwrite=TRUE)
 
-obsoletus_2004_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm, 
+obsoletus_2004_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION, 
                                       newdata=biovars_2004,
                                       filename='output_FEV_2024\\obsoletus_2004_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-imicola_2004_13fev <- sdm::ensemble(imicola_sdm, 
+imicola_2004_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION, 
                                     newdata=biovars_2004,
                                     filename='output_FEV_2024\\imicola_2004_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
@@ -55,25 +53,25 @@ imicola_2004_13fev <- sdm::ensemble(imicola_sdm,
 #2007
 #####################
 
-dewulfi_2007_13fev <- sdm::ensemble(dewulfi_sdm,
+dewulfi_2007_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION,
                                     newdata=biovars_2007,
                                     filename='output_FEV_2024\\dewulfi_2007_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                     overwrite=TRUE)
 
-pulicaris_2007_13fev <- sdm::ensemble(pulicaris_sdm,
+pulicaris_2007_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION,
                                       newdata=biovars_2007,
                                       filename='output_FEV_2024\\pulicaris_2007_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-obsoletus_2007_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm,
+obsoletus_2007_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION,
                                       newdata=biovars_2007,
                                       filename='output_FEV_2024\\obsoletus_2007_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-imicola_2007_13fev <- sdm::ensemble(imicola_sdm,
+imicola_2007_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                                     newdata=biovars_2007,
                                     filename='output_FEV_2024\\imicola_2007_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
@@ -84,25 +82,25 @@ imicola_2007_13fev <- sdm::ensemble(imicola_sdm,
 #2008
 #####################
 
-dewulfi_2008_13fev <- sdm::ensemble(dewulfi_sdm,
+dewulfi_2008_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION,
                               newdata=biovars_2008,
                               filename='output_FEV_2024\\dewulfi_2008_fev24.img',
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                               overwrite=TRUE)
 
-pulicaris_2008_13fev <- sdm::ensemble(pulicaris_sdm,
+pulicaris_2008_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION,
                                 newdata=biovars_2008,
                                 filename='output_FEV_2024\\pulicaris_2008_fev24.img',
                                 setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                 overwrite=TRUE)
 
-obsoletus_2008_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm,
+obsoletus_2008_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION,
                                 newdata=biovars_2008,
                                 filename='output_FEV_2024\\obsoletus_2008_fev24.img',
                                 setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                 overwrite=TRUE)
 
-imicola_2008_13fev <- sdm::ensemble(imicola_sdm,
+imicola_2008_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                               newdata=biovars_2008,
                               filename='output_FEV_2024\\imicola_2008_fev24.img',
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
@@ -113,25 +111,25 @@ imicola_2008_13fev <- sdm::ensemble(imicola_sdm,
 #2009
 ######################
 
-dewulfi_2009_13fev <- sdm::ensemble(dewulfi_sdm,
+dewulfi_2009_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION,
                               newdata=biovars_2009,
                               filename='output_FEV_2024\\dewulfi_2009_fev24.img',
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                               overwrite=TRUE)
 
-pulicaris_2009_13fev <- sdm::ensemble(pulicaris_sdm,
+pulicaris_2009_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION,
                                 newdata=biovars_2009,
                                 filename='output_FEV_2024\\pulicaris_2009_fev24.img',
                                 setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                 overwrite=TRUE)
 
-obsoletus_2009_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm,
+obsoletus_2009_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION,
                                 newdata=biovars_2009,
                                 filename='output_FEV_2024\\obsoletus_2009_fev24.img',
                                 setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                 overwrite=TRUE)
 
-imicola_2009_13fev <- sdm::ensemble(imicola_sdm,
+imicola_2009_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                               newdata=biovars_2009,
                               filename='output_FEV_2024\\imicola_2009_fev24.img',
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
@@ -142,25 +140,25 @@ imicola_2009_13fev <- sdm::ensemble(imicola_sdm,
 #2010
 ######################
 
-dewulfi_2010_13fev <- sdm::ensemble(dewulfi_sdm,
+dewulfi_2010_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION,
                                     newdata=biovars_2010,
                                     filename='output_FEV_2024\\dewulfi_2010_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                     overwrite=TRUE)
 
-pulicaris_2010_13fev <- sdm::ensemble(pulicaris_sdm,
+pulicaris_2010_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION,
                                       newdata=biovars_2010,
                                       filename='output_FEV_2024\\pulicaris_2010_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-obsoletus_2010_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm,
+obsoletus_2010_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION,
                                       newdata=biovars_2010,
                                       filename='output_FEV_2024\\obsoletus_2010_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-imicola_2010_13fev <- sdm::ensemble(imicola_sdm,
+imicola_2010_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                                     newdata=biovars_2010,
                                     filename='output_FEV_2024\\imicola_2010_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
@@ -170,25 +168,25 @@ imicola_2010_13fev <- sdm::ensemble(imicola_sdm,
 #2015
 ######################
 
-dewulfi_2015_13fev <- sdm::ensemble(dewulfi_sdm,
+dewulfi_2015_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION,
                                     newdata=biovars_2015,
                                     filename='output_FEV_2024\\dewulfi_2015_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                     overwrite=TRUE)
 
-pulicaris_2015_13fev <- sdm::ensemble(pulicaris_sdm,
+pulicaris_2015_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION,
                                       newdata=biovars_2015,
                                       filename='output_FEV_2024\\pulicaris_2015_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-obsoletus_2015_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm,
+obsoletus_2015_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION,
                                       newdata=biovars_2015,
                                       filename='output_FEV_2024\\obsoletus_2015_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-imicola_2015_13fev <- sdm::ensemble(imicola_sdm,
+imicola_2015_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                                     newdata=biovars_2015,
                                     filename='output_FEV_2024\\imicola_2015_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
@@ -198,25 +196,25 @@ imicola_2015_13fev <- sdm::ensemble(imicola_sdm,
 #2016
 ######################
 
-dewulfi_2016_13fev <- sdm::ensemble(dewulfi_sdm,
+dewulfi_2016_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION,
                                     newdata=biovars_2016,
                                     filename='output_FEV_2024\\dewulfi_2016_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                     overwrite=TRUE)
 
-pulicaris_2016_13fev <- sdm::ensemble(pulicaris_sdm,
+pulicaris_2016_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION,
                                       newdata=biovars_2016,
                                       filename='output_FEV_2024\\pulicaris_2016_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-obsoletus_2016_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm,
+obsoletus_2016_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION,
                                       newdata=biovars_2016,
                                       filename='output_FEV_2024\\obsoletus_2016_fev24.img',
                                       setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                       overwrite=TRUE)
 
-imicola_2016_13fev <- sdm::ensemble(imicola_sdm,
+imicola_2016_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                                     newdata=biovars_2016,
                                     filename='output_FEV_2024\\imicola_2016_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
@@ -227,25 +225,25 @@ imicola_2016_13fev <- sdm::ensemble(imicola_sdm,
 #2021
 ######################
 
-dewulfi_2021_13fev <- sdm::ensemble(dewulfi_sdm,
+dewulfi_2021_13fev <- sdm::ensemble(dewulfi_sdm_NEW_VERSION,
                               newdata=biovars_2021,
                               filename='output_FEV_2024\\dewulfi_2021_fev24.img',
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                               overwrite=TRUE)
 
-pulicaris_2021_13fev <- sdm::ensemble(pulicaris_sdm,
+pulicaris_2021_13fev <- sdm::ensemble(pulicaris_sdm_NEW_VERSION,
                                 newdata=biovars_2021,
                                 filename='output_FEV_2024\\pulicaris_2021_fev24.img',
                                 setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                 overwrite=TRUE)
 
-obsoletus_2021_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm,
+obsoletus_2021_13fev <- sdm::ensemble(obsoletus_COMPLEX_sdm_NEW_VERSION,
                                 newdata=biovars_2021,
                                 filename='output_FEV_2024\\obsoletus_2021_fev24.img',
                                 setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                 overwrite=TRUE)
 
-imicola_2021_13fev <- sdm::ensemble(imicola_sdm,
+imicola_2021_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                               newdata=biovars_2021,
                               filename='output_FEV_2024\\imicola_2021_fev24.img',
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
