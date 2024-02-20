@@ -248,4 +248,3 @@ imicola_2021_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                               overwrite=TRUE)
 
-
