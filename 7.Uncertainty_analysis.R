@@ -15,7 +15,7 @@
 #####################
 # But first convert the 'sdmModels' class object to the current version of the package
 #####################
-
+#There were some updates in the package sdm ever since the first modelling
 obsoletus_COMPLEX_sdm_NEW_VERSION <- sdmAdapt(obsoletus_COMPLEX_sdm)
 dewulfi_sdm_NEW_VERSION <- sdmAdapt(dewulfi_sdm)
 pulicaris_sdm_NEW_VERSION <- sdmAdapt(pulicaris_sdm)
@@ -48,6 +48,7 @@ imicola_2004_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                                     filename='output_FEV_2024\\imicola_2004_fev24.img',
                                     setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                                     overwrite=TRUE) 
+
 
 #####################
 #2007
@@ -247,4 +248,107 @@ imicola_2021_13fev <- sdm::ensemble(imicola_sdm_NEW_VERSION,
                               filename='output_FEV_2024\\imicola_2021_fev24.img',
                               setting=list(method=c('weighted','uncertainty', 'stdev','ci'), stat='TSS'),
                               overwrite=TRUE)
+
+
+################################################################################
+# Plot uncertainty
+################################################################################
+
+#Define breaks
+brks <- seq(0, 1, by=0.1) 
+
+#DEWULFI
+uncert_DEWULFI <- raster::stack(
+              dewulfi_2004_13fev[[2]],
+              dewulfi_2007_13fev[[2]],
+              dewulfi_2008_13fev[[2]],
+              dewulfi_2009_13fev[[2]],
+              dewulfi_2010_13fev[[2]],
+              dewulfi_2015_13fev[[2]],
+              dewulfi_2016_13fev[[2]],
+              dewulfi_2021_13fev[[2]]
+              )
+
+terra::plot(uncert_DEWULFI, 
+            #range = c(0, 1), 
+            col = rev(terrain.colors(11)),
+            breaks = brks,
+            main = "",
+            box = FALSE,
+            legend = FALSE,
+            axes = FALSE,
+            nr = 2
+)
+
+
+#OBSOLETUS
+uncert_OBSOLETUS <- raster::stack(
+  obsoletus_2004_13fev[[2]],
+  obsoletus_2007_13fev[[2]],
+  obsoletus_2008_13fev[[2]],
+  obsoletus_2009_13fev[[2]],
+  obsoletus_2010_13fev[[2]],
+  obsoletus_2015_13fev[[2]],
+  obsoletus_2016_13fev[[2]],
+  obsoletus_2021_13fev[[2]]
+)
+
+terra::plot(uncert_OBSOLETUS, 
+            #range = c(0, 1), 
+            col = rev(terrain.colors(11)),
+            breaks = brks,
+            main = "",
+            box = FALSE,
+            legend = FALSE,
+            axes = FALSE,
+            nr = 2
+)
+
+
+#IMICOLA
+uncert_IMICOLA <- raster::stack(
+  imicola_2004_13fev[[2]],
+  imicola_2007_13fev[[2]],
+  imicola_2008_13fev[[2]],
+  imicola_2009_13fev[[2]],
+  imicola_2010_13fev[[2]],
+  imicola_2015_13fev[[2]],
+  imicola_2016_13fev[[2]],
+  imicola_2021_13fev[[2]]
+)
+
+terra::plot(uncert_IMICOLA, 
+            #range = c(0, 1), 
+            col = rev(terrain.colors(11)),
+            breaks = brks,
+            main = "",
+            box = FALSE,
+            legend = FALSE,
+            axes = FALSE,
+            nr = 2
+)
+
+
+#PULICARIS
+uncert_PULICARIS <- raster::stack(
+  pulicaris_2004_13fev[[2]],
+  pulicaris_2007_13fev[[2]],
+  pulicaris_2008_13fev[[2]],
+  pulicaris_2009_13fev[[2]],
+  pulicaris_2010_13fev[[2]],
+  pulicaris_2015_13fev[[2]],
+  pulicaris_2016_13fev[[2]],
+  pulicaris_2021_13fev[[2]]
+)
+
+terra::plot(uncert_PULICARIS, 
+            #range = c(0, 1), 
+            col = rev(terrain.colors(11)),
+            breaks = brks,
+            main = "",
+            box = FALSE,
+            legend = FALSE,
+            axes = FALSE,
+            nr = 2
+)
 
