@@ -351,4 +351,3 @@ terra::plot(uncert_PULICARIS,
             axes = FALSE,
             nr = 2
 )
-
