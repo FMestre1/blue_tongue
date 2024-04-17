@@ -131,7 +131,7 @@ biovars_2021 <- dismo::biovars(prec = prec_2021_2, tmin = tmin_2021_2, tmax = tm
 #save(biovars_2021, file = "biovars_2021.RData") 
 
 ####################################################
-# Remove individual rasters from environment
+# Remove individual rasters from the environment
 ####################################################
 
 rm(tmin_2004, tmin_2007, tmin_2008, tmin_2009, tmin_2010, tmin_2015, tmin_2016,
@@ -306,5 +306,3 @@ raster::writeRaster(biovars_2021$bio16, filename = "2021\\bio16.tif")
 raster::writeRaster(biovars_2021$bio17, filename = "2021\\bio17.tif")
 raster::writeRaster(biovars_2021$bio18, filename = "2021\\bio18.tif")
 raster::writeRaster(biovars_2021$bio19, filename = "2021\\bio19.tif")
-
-

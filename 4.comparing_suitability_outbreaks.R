@@ -400,78 +400,102 @@ for(i in 1:1000){
 
 ################################################################################ imicola
 
+#Create table 3 - Results of the T Student tests comparing the suitability 
+#of outbreak locations with the rest of the country
+
+t_studend_imicola <- c(
 #imicola 2004
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2004)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2004), 3),
 #imicola 2007
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2007)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2007), 3),
 #imicola 2008
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2008)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2008), 3),
 #imicola 2009
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2009)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2009), 3),
 #imicola 2010
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2010)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2010), 3),
 #imicola 2015
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2015)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2015), 3),
 #imicola 2016
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2016)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2016), 3),
 #imicola 2021
-mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2021)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_imicola_2021), 3)
+)
 
 ################################################################################ dewulfi
 
+t_studend_dewulfi <- c(
 #dewulfi 2004
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2004)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2004), 3),
 #dewulfi 2007
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2007)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2007), 3),
 #dewulfi 2008
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2008)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2008), 3),
 #dewulfi 2009
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2009)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2009), 3),
 #dewulfi 2010
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2010)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2010), 3),
 #dewulfi 2015
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2015)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2015), 3),
 #dewulfi 2016
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2016)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2016), 3),
 #dewulfi 2021
-mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2021)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_dewulfi_2021), 3)
+)
 
 ################################################################################ pulicaris
 
+t_studend_pulicaris <- c(
 #pulicaris 2004
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2004)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2004), 3),
 #pulicaris 2007
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2007)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2007), 3),
 #pulicaris 2008
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2008)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2008), 3),
 #pulicaris 2009
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2009)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2009), 3),
 #pulicaris 2010
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2010)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2010), 3),
 #pulicaris 2015
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2015)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2015), 3),
 #pulicaris 2016
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2016)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2016), 3),
 #pulicaris 2021
-mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2021)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_pulicaris_2021), 3)
+)
 
 ################################################################################ obsoletus
 
+t_studend_obsoletus <- c(
 #obsoletus 2004
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2004)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2004), 3),
 #obsoletus 2007
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2007)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2007), 3),
 #obsoletus 2008
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2008)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2008), 3),
 #obsoletus 2009
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2009)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2009), 3),
 #obsoletus 2010
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2010)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2010), 3),
 #obsoletus 2015
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2015)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2015), 3),
 #obsoletus 2016
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2016)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2016), 3),
 #obsoletus 2021
-mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2021)
+round(mean(VECTOR_TEST_blue_tongue_outbreaks_obsoletus_2021), 3)
+)
 
-################################################################################
+
+table3 <- t(data.frame(t_studend_imicola,
+           t_studend_dewulfi,
+           t_studend_pulicaris,
+           t_studend_obsoletus
+           ))
+
+colnames(table3) <- c("2004", "2007", "2008", "2009", "2010", "2015", "2016", "2021")
+rownames(table3) <- c("C. imicola", "C. dewulfi", "C. pulicaris", "C. obsoletus complex")
+
+table3_2 <- ifelse(table3 < 0.05, "*", "NS")
+
+#Write
+#write.csv(table3_2, "table3_2.csv")

@@ -6,6 +6,8 @@
 #06/07/2022
 
 #Load required packages
+#detach("package:sdm", unload = TRUE)
+#devtools::install_github("babaknaimi/sdm")
 library(sdm)
 library(usdm)
 #installAll()
@@ -28,46 +30,73 @@ study_site_alentejo <- raster::shapefile("ssite_blue_tongue_merged.shp")
 #raster::plot(study_site)
 
 # 2.Load bioclimatic 10x10 km to calibrate #####################################
-bio1 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_01.tif")
-bio2 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_02.tif")
-bio3 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_03.tif")
-bio4 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_04.tif")
-bio5 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_05.tif")
-bio6 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_06.tif")
-bio7 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_07.tif")
-bio8 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_08.tif")
-bio9 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_09.tif")
-bio10 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_10.tif")
-bio11 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_11.tif")
-bio12 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_12.tif")
-bio13 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_13.tif")
-bio14 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_14.tif")
-bio15 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_15.tif")
-bio16 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_16.tif")
-bio17 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_17.tif")
-bio18 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_18.tif")
-bio19 <- raster("wc2.0_10m_bio\\wc2.0_bio_10m_19.tif")
+bio1 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_01.tif")
+bio2 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_02.tif")
+bio3 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_03.tif")
+bio4 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_04.tif")
+bio5 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_05.tif")
+bio6 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_06.tif")
+bio7 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_07.tif")
+bio8 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_08.tif")
+bio9 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_09.tif")
+bio10 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_10.tif")
+bio11 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_11.tif")
+bio12 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_12.tif")
+bio13 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_13.tif")
+bio14 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_14.tif")
+bio15 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_15.tif")
+bio16 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_16.tif")
+bio17 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_17.tif")
+bio18 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_18.tif")
+bio19 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_19.tif")
 
 # 3.Create stack of variables ##################################################
-preds <- stack(bio1,bio2,bio3,bio4,bio5,bio6,bio7,bio8,bio9,bio10,bio11,bio12,
-               bio13,bio14,bio15,bio16,bio17,bio18,bio19)
+#preds <- c(bio1,bio2,bio3,bio4,bio5,bio6,bio7,bio8,bio9,bio10,bio11,bio12,
+#               bio13,bio14,bio15,bio16,bio17,bio18,bio19)
 
+preds <- c(bio1,bio2,bio3,bio4,bio5,bio6,bio7,bio10,bio11,bio12,
+           bio13,bio14,bio15,bio16,bio17)
+
+#plot(preds)
+continent <- terra::vect("C:\\Users\\asus\\Documents\\shape\\ne_110m_admin_0_countries.shp")
+#plot(continent)
+#plot(continent[continent$CONTINENT != "Antarctica"])
+continent_remove_antarctica <- continent[continent$CONTINENT != "Antarctica"]
+#plot(continent_remove_antarctica)
+
+#Remove Antarctica
+preds_no_antarctica <- crop(preds, continent_remove_antarctica)
+#plot(preds[[1]])
+#plot(preds_no_antarctica[[1]])
 #names(preds)
 #nlayers(preds)
 
-names(preds) <- c("bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9",
-                  "bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17",
-                  "bio18","bio19"
-                  )
+#names(preds) <- c("bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9",
+#                  "bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17",
+#                  "bio18","bio19")
+                  
+#names(preds_no_antarctica) <- c("bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9",
+#                  "bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17",
+#                  "bio18","bio19")
+
+names(preds) <- c("bio1","bio2","bio3","bio4","bio5","bio6","bio7",
+                  "bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17")
+
+names(preds_no_antarctica) <- c("bio1","bio2","bio3","bio4","bio5","bio6","bio7",
+                                "bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17")
 
 # 4.VIF ########################################################################
-vif1 <- usdm::vifstep(preds) #Stepwise elimination of highly inflating variables
-usdm::vifcor(preds)
+vif1 <- usdm::vifstep(preds_no_antarctica) #Stepwise elimination of highly inflating variables
+usdm::vifcor(preds_no_antarctica)
 vif1@results
 
 #Using VIF to select the variables to consider in the model
-preds2 <- usdm::exclude(preds, vif1)
-rm(preds)
+preds2 <- usdm::exclude(preds_no_antarctica, vif1)
+names(preds2)
+#rm(preds)
+#rm(preds_no_antarctica)
+# kept these:
+# "bio2"  "bio3"  "bio4"  "bio10" "bio13" "bio14" "bio15"
 
 # 5.Load species presence ######################################################
 scoticus_gbif <- occ_search(scientificName = "Culicoides scoticus", limit = 10000, hasCoordinate = TRUE)
@@ -421,11 +450,13 @@ writeOGR(obj=COMBINED_pulicaris_thin, dsn="tempdir", layer="COMBINED_pulicaris_t
 writeOGR(obj=COMBINED_imicola_thin, dsn="tempdir", layer="COMBINED_imicola_thin", driver="ESRI Shapefile")
 
 # 14.Format data for sdm ########################################################
-data_obsoletus_COMPLEX <- sdmData(train=COMBINED_obsoletus_thin[,3], predictors = preds2, bg=list(n=10*nrow(COMBINED_obsoletus_thin), method='gRandom',remove=TRUE))
-data_dewulfi_gbif <- sdmData(train=dewulfi_gbif_2_cl_df_spdf_thin[,6], predictors = preds2, bg=list(n=10*nrow(dewulfi_gbif_2_cl_df_spdf_thin), method='gRandom',remove=TRUE))
-data_pulicaris <- sdmData(train=COMBINED_pulicaris_thin[,3], predictors = preds2, bg=list(n=10*nrow(COMBINED_pulicaris_thin), method='gRandom',remove=TRUE))
-data_imicola <- sdmData(train=COMBINED_imicola_thin[,3], predictors = preds2, bg=list(n=10*nrow(COMBINED_imicola_thin@data), method='gRandom',remove=TRUE))
+
+
+data_obsoletus_COMPLEX <- sdmData(train=COMBINED_obsoletus_thin[,3], predictors = raster::stack(preds2), bg=list(n=10*nrow(COMBINED_obsoletus_thin), method='gRandom',remove=TRUE))
+data_dewulfi_gbif <- sdmData(train=dewulfi_gbif_2_cl_df_spdf_thin[,6], predictors = raster::stack(preds2), bg=list(n=10*nrow(dewulfi_gbif_2_cl_df_spdf_thin), method='gRandom',remove=TRUE))
+data_pulicaris <- sdmData(train=COMBINED_pulicaris_thin[,3], predictors = raster::stack(preds2), bg=list(n=10*nrow(COMBINED_pulicaris_thin), method='gRandom',remove=TRUE))
+data_imicola <- sdmData(train=COMBINED_imicola_thin[,3], predictors = raster::stack(preds2), bg=list(n=10*nrow(COMBINED_imicola_thin@data), method='gRandom',remove=TRUE))
 
 # 15.Save ######################################################################
-#save.image("blue_tongue.RData")
+#save.image("blue_tongue_17APR24.RData")
 
