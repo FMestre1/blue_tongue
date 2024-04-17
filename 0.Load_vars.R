@@ -428,3 +428,4 @@ data_imicola <- sdmData(train=COMBINED_imicola_thin[,3], predictors = preds2, bg
 
 # 15.Save ######################################################################
 #save.image("blue_tongue.RData")
+
