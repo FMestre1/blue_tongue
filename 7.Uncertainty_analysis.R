@@ -113,3 +113,7 @@ terra::plot(uncert_PULICARIS,
             axes = FALSE,
             nr = 2
 )
+
+
+# Save #######################################################################
+#save.image("blue_tongue_18APR2024.RData")
