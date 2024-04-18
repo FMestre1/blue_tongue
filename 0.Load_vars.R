@@ -50,6 +50,13 @@ bio17 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_17.tif")
 bio18 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_18.tif")
 bio19 <- terra::rast("wc2.0_10m_bio\\wc2.0_bio_10m_19.tif")
 
+
+plot(bio2) #Figure S13
+plot(bio3) #Figure S14
+plot(bio4) #Figure S15
+plot(bio10) #Figure S16
+plot(bio15) #Figure S17
+
 # 3.Create stack of variables ##################################################
 #preds <- c(bio1,bio2,bio3,bio4,bio5,bio6,bio7,bio8,bio9,bio10,bio11,bio12,
 #               bio13,bio14,bio15,bio16,bio17,bio18,bio19)

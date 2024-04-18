@@ -21,37 +21,37 @@ imicola_sdm <- sdm::sdm(occurrence ~.,data=data_imicola,methods=c('maxent','cart
 #save(imicola_sdm, file = "imicola_sdm_17apr24.RData")
 
 #2. Model metrics and variable importance ######################################
-#brevitasis
+#imicola
+getModelInfo(imicola_sdm)
+getVarImp(imicola_sdm)
+plot(getVarImp(imicola_sdm),'auc') #Fig. S5
+rcurve(imicola_sdm, id=, mean=TRUE, smooth=TRUE) #Fig. S9
+ev_metrics_imicola_sdm <- getEvaluation(imicola_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
+mean_ev_metrics_imicola_sdm <- as.data.frame(round(colMeans(x=ev_metrics_imicola_sdm),3))
+#
+#obsoletus
 getModelInfo(obsoletus_COMPLEX_sdm)
 getVarImp(obsoletus_COMPLEX_sdm)
-plot(getVarImp(obsoletus_COMPLEX_sdm),'auc')
-rcurve(obsoletus_COMPLEX_sdm, id=, mean=TRUE, smooth=TRUE)
+plot(getVarImp(obsoletus_COMPLEX_sdm),'auc') #Fig.S6
+rcurve(obsoletus_COMPLEX_sdm, id=, mean=TRUE, smooth=TRUE) #Fig. S10
 ev_metrics_obsoletus_COMPLEX_sdm <- getEvaluation(obsoletus_COMPLEX_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
 mean_ev_obsoletus_COMPLEX_sdm <- as.data.frame(round(colMeans(x=ev_metrics_obsoletus_COMPLEX_sdm),3))
-#
-#dewulfi
-getModelInfo(dewulfi_sdm)
-getVarImp(dewulfi_sdm)
-plot(getVarImp(dewulfi_sdm),'auc')
-rcurve(dewulfi_sdm, id=, mean=TRUE, smooth=TRUE)
-ev_metrics_dewulfi_sdm <- getEvaluation(dewulfi_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
-mean_ev_metrics_dewulfi_sdm <- as.data.frame(round(colMeans(x=ev_metrics_dewulfi_sdm),3))
 #
 #pulicaris
 getModelInfo(pulicaris_sdm)
 getVarImp(pulicaris_sdm)
-plot(getVarImp(pulicaris_sdm),'auc')
-rcurve(pulicaris_sdm, id=, mean=TRUE, smooth=TRUE)
+plot(getVarImp(pulicaris_sdm),'auc') #Fig. S7
+rcurve(pulicaris_sdm, id=, mean=TRUE, smooth=TRUE) #Fig. S11
 ev_metrics_pulicaris_sdm <- getEvaluation(pulicaris_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
 mean_ev_metrics_pulicaris_sdm <- as.data.frame(round(colMeans(x=ev_metrics_pulicaris_sdm),3))
 #
-#imicola
-getModelInfo(imicola_sdm)
-getVarImp(imicola_sdm)
-plot(getVarImp(imicola_sdm),'auc')
-rcurve(imicola_sdm, id=, mean=TRUE, smooth=TRUE)
-ev_metrics_imicola_sdm <- getEvaluation(imicola_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
-mean_ev_metrics_imicola_sdm <- as.data.frame(round(colMeans(x=ev_metrics_imicola_sdm),3))
+#dewulfi
+getModelInfo(dewulfi_sdm)
+getVarImp(dewulfi_sdm)
+plot(getVarImp(dewulfi_sdm),'auc') #Fig. S8
+rcurve(dewulfi_sdm, id=, mean=TRUE, smooth=TRUE) #Fig. S12
+ev_metrics_dewulfi_sdm <- getEvaluation(dewulfi_sdm,stat=c('TSS','Kappa','AUC', 'specificity', 'sensitivity'),opt="max(se+sp)")
+mean_ev_metrics_dewulfi_sdm <- as.data.frame(round(colMeans(x=ev_metrics_dewulfi_sdm),3))
 
 ################################################################################
 
@@ -62,7 +62,7 @@ table1 <- data.frame(
 t(mean_ev_metrics_imicola_sdm)[,-1],
 t(mean_ev_metrics_dewulfi_sdm)[,-1],
 t(mean_ev_metrics_pulicaris_sdm)[,-1],
-t(mean_ev_metrics_obsoletus_sdm)[,-1]
+t(mean_ev_obsoletus_COMPLEX_sdm)[,-1]
 )
 
 table1 <- t(table1)
